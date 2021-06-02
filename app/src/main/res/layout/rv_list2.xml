@@ -9,13 +9,13 @@
     app:cardUseCompatPadding="true">
 
     <RelativeLayout
-        android:id="@+id/rv_layout_list"
+        android:id="@+id/rv_layout_list2"
         android:layout_width="match_parent"
         android:layout_height="90dp"
         android:padding="10dp">
 
         <ImageView
-            android:id="@+id/img_list"
+            android:id="@+id/img_list2"
             android:layout_width="80dp"
             android:layout_height="match_parent"
             android:src="@mipmap/ic_launcher"
@@ -23,23 +23,23 @@
             android:layout_marginEnd="10dp" />
 
         <TextView
-            android:id="@+id/tv_title_list"
+            android:id="@+id/tv_title_list2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Title"
-            android:layout_toRightOf="@id/img_list"
-            android:layout_toEndOf="@id/img_list" />
+            android:layout_toRightOf="@id/img_list2"
+            android:layout_toEndOf="@id/img_list2" />
 
         <TextView
-            android:id="@+id/tv_desc_list"
+            android:id="@+id/tv_desc_list2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Desc"
             android:ellipsize="end"
             android:maxLines="3"
-            android:layout_toRightOf="@id/img_list"
-            android:layout_toEndOf="@id/img_list"
-            android:layout_below="@id/tv_title_list"/>
+            android:layout_toRightOf="@id/img_list2"
+            android:layout_toEndOf="@id/img_list2"
+            android:layout_below="@id/tv_title_list2"/>
 
     </RelativeLayout>
 

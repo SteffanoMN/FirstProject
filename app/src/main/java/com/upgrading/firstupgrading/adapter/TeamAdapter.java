@@ -44,13 +44,13 @@ public class TeamAdapter extends RecyclerView.Adapter<com.upgrading.firstupgradi
 
     @Override
     public void onBindViewHolder(ListViewHolder holder, int position) {
-        holder.tv_title.setText(dataList.get(position).getTeamName());
-        holder.tv_desc.setText(dataList.get(position).getTeamDesc());
+        holder.tv_title2.setText(dataList.get(position).getTeamName());
+        holder.tv_desc2.setText(dataList.get(position).getTeamDesc());
         Picasso.get()
                 .load(dataList.get(position).getTeamImage())
                 .placeholder(R.mipmap.ic_launcher)
                 .error(R.mipmap.ic_launcher_round)
-                .into(holder.img_list);
+                .into(holder.img_list2);
     }
 
     @Override
@@ -59,16 +59,16 @@ public class TeamAdapter extends RecyclerView.Adapter<com.upgrading.firstupgradi
     }
 
     public class ListViewHolder extends RecyclerView.ViewHolder {
-        private TextView tv_title, tv_desc;
-        private ImageView img_list;
-        private RelativeLayout relativeLayout;
+        private TextView tv_title2, tv_desc2;
+        private ImageView img_list2;
+        private RelativeLayout relativeLayout2;
 
         public ListViewHolder(View itemView, final OnItemClickListener listener) {
             super(itemView);
-            tv_title = itemView.findViewById(R.id.tv_title_list);
-            tv_desc = itemView.findViewById(R.id.tv_desc_list);
-            img_list = itemView.findViewById(R.id.img_list);
-            relativeLayout = itemView.findViewById(R.id.rv_layout_list);
+            tv_title2 = itemView.findViewById(R.id.tv_title_list2);
+            tv_desc2 = itemView.findViewById(R.id.tv_desc_list2);
+            img_list2 = itemView.findViewById(R.id.img_list2);
+            relativeLayout2 = itemView.findViewById(R.id.rv_layout_list2);
 
 
         }
