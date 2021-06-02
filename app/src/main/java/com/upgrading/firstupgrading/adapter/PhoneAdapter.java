@@ -1,4 +1,4 @@
-package com.upgrading.firstupgrading;
+package com.upgrading.firstupgrading.adapter;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -9,6 +9,9 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.upgrading.firstupgrading.model.PhoneModel;
+import com.upgrading.firstupgrading.R;
 
 import java.util.ArrayList;
 

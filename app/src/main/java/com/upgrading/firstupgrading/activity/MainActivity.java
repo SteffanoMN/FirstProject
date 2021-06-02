@@ -1,4 +1,4 @@
-package com.upgrading.firstupgrading;
+package com.upgrading.firstupgrading.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -12,6 +12,10 @@ import android.widget.Button;
 import android.widget.Toast;
 
 import com.google.android.material.textfield.TextInputEditText;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.upgrading.firstupgrading.R;
+import com.upgrading.firstupgrading.model.PhoneModel;
 
 import java.util.ArrayList;
 
@@ -25,6 +29,9 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        FirebaseDatabase database = FirebaseDatabase.getInstance();
+        DatabaseReference myRef = database.getReference("contacts");
 
         arrayList = new ArrayList<>();
 
@@ -68,7 +75,9 @@ public class MainActivity extends AppCompatActivity {
                 } else {
                     age = Integer.parseInt(txt_age.getText().toString());
 
-                    arrayList.add(new PhoneModel(name, email, phone, gender, about, age));
+                    String key = myRef.push().getKey();
+                    PhoneModel phoneModel = new PhoneModel(name, email, phone, gender, about, age);
+                    myRef.child(key).setValue(phoneModel);
 
                     txt_name.setText("");
                     txt_age.setText("");
@@ -86,7 +95,6 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getApplicationContext(), PhoneActivity.class);
-                intent.putExtra("arrayList", arrayList);
                 startActivity(intent);
             }
         });
